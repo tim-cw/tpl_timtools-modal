@@ -7,13 +7,15 @@
 import { src, dest, series } from 'gulp';
 import gulpif from 'gulp-if';
 import plumber from 'gulp-plumber';
-import sass from 'gulp-sass';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import errorHandler from '../util/errorHandler.js';
 import { isProd } from '../util/env.js';
 import browserSync from 'browser-sync';
+const sass = gulpSass(dartSass);
 
 // Config
 import { paths } from '../config';

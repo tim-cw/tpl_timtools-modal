@@ -5,7 +5,6 @@
 
 // Dependencies
 import { src, dest, series } from 'gulp';
-import webpack from 'webpack';
 import gulpWebpack from 'webpack-stream';
 import plumber from 'gulp-plumber';
 import errorHandler from '../util/errorHandler.js';
@@ -17,6 +16,6 @@ import { paths } from '../config';
 export function scripts() {
   return src(paths.scripts.src)
     .pipe(plumber({ errorHandler }))
-    .pipe(gulpWebpack(require('../webpack.config.js'), webpack))
+    .pipe(gulpWebpack(require('../webpack.config.js')))
     .pipe(dest(paths.scripts.dest));
 }
